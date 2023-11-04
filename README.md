@@ -20,7 +20,7 @@ layer is mixed up with the domain layer in the service
 Vocabulary, that exposing all use cases of the application.
 
 Data integrity managing is encapsulated in repositories.
-Base repository implements some basis methods like Commit
+Any repository must implement some basis methods like Commit
 (commit changes) and Add (track passed object). Repositories
 is able to work only with objects, that has `Id` field (to 
 simplify objects mapping in a implementation)
