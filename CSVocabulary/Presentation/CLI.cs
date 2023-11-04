@@ -5,14 +5,15 @@ namespace CSVocabulary.Presentation;
 
 public class CLI
 {
-    private IOC _ioc = new();
+    private IOC _ioc;
     private readonly Vocabulary _dictionary;
     private string? _defaultLang1;
     private string? _defaultLang2;
 
-    public CLI()
+    public CLI(IOC ioc)
     {
-        _dictionary = _ioc.GetDictionary();
+        _dictionary = ioc.GetDictionary();
+        _ioc = ioc;
     }
 
     private string Input(string q)

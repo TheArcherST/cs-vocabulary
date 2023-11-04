@@ -6,6 +6,15 @@ namespace CSVocabulary.Presentation;
 
 public class IOC
 {
+    private string _wordsFilePath;
+    private string _translationsFilePath;
+    
+    public IOC(string wordsFilePath, string translationsFilePath)
+    {
+        _wordsFilePath = wordsFilePath;
+        _translationsFilePath = translationsFilePath;
+    }
+    
     private void CreateEmptyJsonFile(string path)
     {
         using var fs = File.Open(path, FileMode.Create);
@@ -15,15 +24,12 @@ public class IOC
     
     public Vocabulary GetDictionary()
     {
-        var wordsFilePath = "words.json";
-        var translationsFilePath = "translations.json";
-
-        if (!File.Exists(wordsFilePath)) CreateEmptyJsonFile(wordsFilePath);
-        if (!File.Exists(translationsFilePath)) CreateEmptyJsonFile(translationsFilePath);
+        if (!File.Exists(_wordsFilePath)) CreateEmptyJsonFile(_wordsFilePath);
+        if (!File.Exists(_translationsFilePath)) CreateEmptyJsonFile(_translationsFilePath);
         
         return new Vocabulary(
-            new WordRepo(wordsFilePath),
-            new TranslationRepo(translationsFilePath)
+            new WordRepo(_wordsFilePath),
+            new TranslationRepo(_translationsFilePath)
         );
     }
 }

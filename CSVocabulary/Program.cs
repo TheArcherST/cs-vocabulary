@@ -1,5 +1,9 @@
 ﻿using CSVocabulary.Presentation;
 
 
-var cli = new CLI();
+var ioc = new IOC(
+    "words.json",
+    "translations.json");
+
+var cli = new CLI(ioc);
 cli.Run();
