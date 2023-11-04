@@ -1,4 +1,4 @@
-using CSVocabulary.Domain.Models;
+using CSVocabulary.Domain.Services;
 using CSVocabulary.Domain.Repositories;
 
 namespace CSVocabulary.Presentation;

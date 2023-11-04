@@ -1,7 +1,8 @@
 using CSVocabulary.Domain.Errors;
+using CSVocabulary.Domain.Models;
 using CSVocabulary.Domain.Repositories;
 
-namespace CSVocabulary.Domain.Models;
+namespace CSVocabulary.Domain.Services;
 
 
 public record Vocabulary(WordRepo WordRepo, TranslationRepo TranslationRepo)
