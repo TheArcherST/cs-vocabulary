@@ -1,6 +1,6 @@
-using CSExam.Domain.Models;
+using CSVocabulary.Domain.Models;
 
-namespace CSExam.Domain.Repositories;
+namespace CSVocabulary.Domain.Repositories;
 
 
 public class WordRepo : BaseRepo<Word>

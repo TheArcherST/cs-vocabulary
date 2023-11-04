@@ -1,12 +1,12 @@
 using System.Runtime.InteropServices.JavaScript;
-using CSExam.Domain.Models;
+using CSVocabulary.Domain.Models;
 
-namespace CSExam.Presentation;
+namespace CSVocabulary.Presentation;
 
 public class CLI
 {
     private IOC _ioc = new();
-    private readonly MyDictionary _dictionary;
+    private readonly Vocabulary _dictionary;
     private string? _defaultLang1;
     private string? _defaultLang2;
 

@@ -1,10 +1,10 @@
-using CSExam.Domain.Errors;
-using CSExam.Domain.Repositories;
+using CSVocabulary.Domain.Errors;
+using CSVocabulary.Domain.Repositories;
 
-namespace CSExam.Domain.Models;
+namespace CSVocabulary.Domain.Models;
 
 
-public record MyDictionary(WordRepo WordRepo, TranslationRepo TranslationRepo)
+public record Vocabulary(WordRepo WordRepo, TranslationRepo TranslationRepo)
 {
     
     public Word AddWord(string value, string language)

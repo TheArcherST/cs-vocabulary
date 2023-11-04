@@ -1,7 +1,7 @@
-using CSExam.Domain.Models;
-using CSExam.Domain.Repositories;
+using CSVocabulary.Domain.Models;
+using CSVocabulary.Domain.Repositories;
 
-namespace CSExam.Presentation;
+namespace CSVocabulary.Presentation;
 
 
 public class IOC
@@ -13,7 +13,7 @@ public class IOC
         fsW.WriteLine("{\"Root\": []}");
     }
     
-    public MyDictionary GetDictionary()
+    public Vocabulary GetDictionary()
     {
         var wordsFilePath = "words.json";
         var translationsFilePath = "translations.json";
@@ -21,7 +21,7 @@ public class IOC
         if (!File.Exists(wordsFilePath)) CreateEmptyJsonFile(wordsFilePath);
         if (!File.Exists(translationsFilePath)) CreateEmptyJsonFile(translationsFilePath);
         
-        return new MyDictionary(
+        return new Vocabulary(
             new WordRepo(wordsFilePath),
             new TranslationRepo(translationsFilePath)
         );

@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace CSExam.Domain.Repositories;
+namespace CSVocabulary.Domain.Repositories;
 
 
 public interface IHasId
